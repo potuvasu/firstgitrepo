@@ -1,0 +1,64 @@
+{
+	"name": "get_filenames",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BLBSTORAGE1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "tstcontnrpotu"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SKU_NO",
+				"type": "String"
+			},
+			{
+				"name": "STORE_ID",
+				"type": "String"
+			},
+			{
+				"name": "PERIOD_DT_ID",
+				"type": "String"
+			},
+			{
+				"name": "PERIOD_NO",
+				"type": "String"
+			},
+			{
+				"name": "SLS_PRICE_TRXN",
+				"type": "String"
+			},
+			{
+				"name": "SLS_PRICE_TRXN_YA",
+				"type": "String"
+			},
+			{
+				"name": "UNITS_SOLD",
+				"type": "String"
+			},
+			{
+				"name": "UNITS_SOLD_YA",
+				"type": "String"
+			},
+			{
+				"name": "TRXN_ID",
+				"type": "String"
+			},
+			{
+				"name": "LICENSEE_ID",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

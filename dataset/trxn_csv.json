@@ -1,0 +1,61 @@
+{
+	"name": "trxn_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BLBSTORAGE1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "TRXN.csv",
+				"container": "tstcontnrpotu"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "TRXN_ID",
+				"type": "String"
+			},
+			{
+				"name": "TRXN_CD",
+				"type": "String"
+			},
+			{
+				"name": "TRXN_DSC",
+				"type": "String"
+			},
+			{
+				"name": "TYPE_CD",
+				"type": "String"
+			},
+			{
+				"name": "TYPE_DSC",
+				"type": "String"
+			},
+			{
+				"name": "SUBTYPE_CD",
+				"type": "String"
+			},
+			{
+				"name": "SUBTYPE_DSC",
+				"type": "String"
+			},
+			{
+				"name": "EXT_01_DSC",
+				"type": "String"
+			},
+			{
+				"name": "EXT_02_DSC",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

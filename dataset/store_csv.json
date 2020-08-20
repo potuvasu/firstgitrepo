@@ -1,0 +1,317 @@
+{
+	"name": "store_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BLBSTORAGE1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "STORE.csv",
+				"container": "tstcontnrpotu"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "STORE_ID",
+				"type": "String"
+			},
+			{
+				"name": "STORE_SRC_CD",
+				"type": "String"
+			},
+			{
+				"name": "STORE_CD",
+				"type": "String"
+			},
+			{
+				"name": "BUSN_KEY",
+				"type": "String"
+			},
+			{
+				"name": "DATA_SYS_CD",
+				"type": "String"
+			},
+			{
+				"name": "DATA_GRP_CD",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_SALES_ORG_ID",
+				"type": "String"
+			},
+			{
+				"name": "NATL_SALES_ORG_ID",
+				"type": "String"
+			},
+			{
+				"name": "STORE_TYPE_CD",
+				"type": "String"
+			},
+			{
+				"name": "STORE_TYPE_DSC",
+				"type": "String"
+			},
+			{
+				"name": "STORE_SUBTYPE_CD",
+				"type": "String"
+			},
+			{
+				"name": "STORE_SUBTYPE_DSC",
+				"type": "String"
+			},
+			{
+				"name": "STORE_NAME",
+				"type": "String"
+			},
+			{
+				"name": "STORE_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "ADDR_01_DSC",
+				"type": "String"
+			},
+			{
+				"name": "ADDR_02_DSC",
+				"type": "String"
+			},
+			{
+				"name": "CITY_DSC",
+				"type": "String"
+			},
+			{
+				"name": "STATE_CD",
+				"type": "String"
+			},
+			{
+				"name": "STATE_DSC",
+				"type": "String"
+			},
+			{
+				"name": "POSTAL_CD",
+				"type": "String"
+			},
+			{
+				"name": "COUNTRY_CD",
+				"type": "String"
+			},
+			{
+				"name": "COUNTRY_DSC",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_CD",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_DSC",
+				"type": "String"
+			},
+			{
+				"name": "SUBCHANNEL_CD",
+				"type": "String"
+			},
+			{
+				"name": "SUBCHANNEL_DSC",
+				"type": "String"
+			},
+			{
+				"name": "BANNER_CD",
+				"type": "String"
+			},
+			{
+				"name": "BANNER_DSC",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_TYPE_CD",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_TYPE_DSC",
+				"type": "String"
+			},
+			{
+				"name": "OWNER_CD",
+				"type": "String"
+			},
+			{
+				"name": "OWNER_DSC",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_GROUP_CD",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_GROUP_DSC",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_CD",
+				"type": "String"
+			},
+			{
+				"name": "PREMISE_TYPE_NM",
+				"type": "String"
+			},
+			{
+				"name": "LCB_CD",
+				"type": "String"
+			},
+			{
+				"name": "REGION_MANAGER_NM",
+				"type": "String"
+			},
+			{
+				"name": "REGION_NM",
+				"type": "String"
+			},
+			{
+				"name": "REGION_SQN",
+				"type": "String"
+			},
+			{
+				"name": "SUBREGION_MANAGER_NM",
+				"type": "String"
+			},
+			{
+				"name": "SUBREGION_NM",
+				"type": "String"
+			},
+			{
+				"name": "SUBREGION_SQN",
+				"type": "String"
+			},
+			{
+				"name": "DISTRICT_MANAGER_NM",
+				"type": "String"
+			},
+			{
+				"name": "DISTRICT_NM",
+				"type": "String"
+			},
+			{
+				"name": "DISTRICT_SQN",
+				"type": "String"
+			},
+			{
+				"name": "TERRITORY_MANAGER_NM",
+				"type": "String"
+			},
+			{
+				"name": "TERRITORY_NM",
+				"type": "String"
+			},
+			{
+				"name": "TERRITORY_SQN",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_NM",
+				"type": "String"
+			},
+			{
+				"name": "OWNER_NM",
+				"type": "String"
+			},
+			{
+				"name": "BANNER_NM",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "ADDRESS2",
+				"type": "String"
+			},
+			{
+				"name": "CITY",
+				"type": "String"
+			},
+			{
+				"name": "FSA",
+				"type": "String"
+			},
+			{
+				"name": "POSTAL",
+				"type": "String"
+			},
+			{
+				"name": "LATITIDUE",
+				"type": "String"
+			},
+			{
+				"name": "LONGITUDE",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_GROUP_NM",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_NM",
+				"type": "String"
+			},
+			{
+				"name": "CHANNEL_SUB_TYPE_NM",
+				"type": "String"
+			},
+			{
+				"name": "LAST_MODIFIED_USER",
+				"type": "String"
+			},
+			{
+				"name": "LOC_PREFIX",
+				"type": "String"
+			},
+			{
+				"name": "SALES_HIER_DISTRICT",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_REGION_CD",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_REGION_NM",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_DISTRICT_CD",
+				"type": "String"
+			},
+			{
+				"name": "LOCATION_DISTRICT_NM",
+				"type": "String"
+			},
+			{
+				"name": "SALES_TYPE",
+				"type": "String"
+			},
+			{
+				"name": "SALES_SUB_TYPE",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
