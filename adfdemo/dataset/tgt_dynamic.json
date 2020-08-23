@@ -1,0 +1,35 @@
+{
+	"name": "tgt_dynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blb_ssfdemo_tstcontnrpotu",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tgt_fl_nm": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "tgt"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().tgt_fl_nm",
+					"type": "Expression"
+				},
+				"container": "tgtcontnrpotu"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
