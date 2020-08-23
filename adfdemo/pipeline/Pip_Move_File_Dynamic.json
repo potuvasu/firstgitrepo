@@ -21,7 +21,8 @@
 					},
 					"fieldList": [],
 					"storeSettings": {
-						"type": "AzureBlobStorageReadSettings"
+						"type": "AzureBlobStorageReadSettings",
+						"recursive": true
 					},
 					"formatSettings": {
 						"type": "DelimitedTextReadSettings"
