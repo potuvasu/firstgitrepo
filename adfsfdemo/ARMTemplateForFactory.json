@@ -1294,6 +1294,45 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/tgt_dynamic')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "blb_ssfdemo_tstcontnrpotu",
+					"type": "LinkedServiceReference"
+				},
+				"parameters": {
+					"tgt_fl_nm": {
+						"type": "string"
+					}
+				},
+				"folder": {
+					"name": "tgt"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@dataset().tgt_fl_nm",
+							"type": "Expression"
+						},
+						"container": "tgtcontnrpotu"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/blb_ssfdemo_tstcontnrpotu')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/tgt_item')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -1517,218 +1556,6 @@
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/tgt_item_copy1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "blb_ssfdemo_tstcontnrpotu",
-					"type": "LinkedServiceReference"
-				},
-				"folder": {
-					"name": "tgt"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "ITEM.csv",
-						"container": "tgtcontnrpotu"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "ITEM_ID",
-						"type": "String"
-					},
-					{
-						"name": "ITEM_DSC",
-						"type": "String"
-					},
-					{
-						"name": "BRAND_FAMILY_DSC",
-						"type": "String"
-					},
-					{
-						"name": "BRAND_CD",
-						"type": "String"
-					},
-					{
-						"name": "SUBBRAND_DSC",
-						"type": "String"
-					},
-					{
-						"name": "APPELLATION_ORIGIN_DSC",
-						"type": "String"
-					},
-					{
-						"name": "APPELLATION_REGION_DSC",
-						"type": "String"
-					},
-					{
-						"name": "APPELLATION_DSC",
-						"type": "String"
-					},
-					{
-						"name": "APPELLATION_PROVINCE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "VARIETAL_GROUP_DSC",
-						"type": "String"
-					},
-					{
-						"name": "VARIETAL_TYPE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "VARIETAL_DSC",
-						"type": "String"
-					},
-					{
-						"name": "VINTAGE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "DESIGNATION_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UNIT_GROUP_DSC",
-						"type": "String"
-					},
-					{
-						"name": "PACK_SIZE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UNIT_SIZE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UNIT_PER_PACK_DSC",
-						"type": "String"
-					},
-					{
-						"name": "PACK_TYPE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "NEGOCIANT_DSC",
-						"type": "String"
-					},
-					{
-						"name": "IMPORT_STATUS_DSC",
-						"type": "String"
-					},
-					{
-						"name": "ORIGIN_REGION_DSC",
-						"type": "String"
-					},
-					{
-						"name": "ORIGIN_COUNTRY_DSC",
-						"type": "String"
-					},
-					{
-						"name": "ORIGIN_PROVINCE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "PRODUCT_CLASS_DSC",
-						"type": "String"
-					},
-					{
-						"name": "PRODUCT_SEGMENT_DSC",
-						"type": "String"
-					},
-					{
-						"name": "PRODUCT_SUBCLASS_DSC",
-						"type": "String"
-					},
-					{
-						"name": "COLOR_DSC",
-						"type": "String"
-					},
-					{
-						"name": "FLAVOR_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UOM_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UPC_NO",
-						"type": "String"
-					},
-					{
-						"name": "FINANCE_SEGMENT_DSC",
-						"type": "String"
-					},
-					{
-						"name": "FINANCE_GROUP_DSC",
-						"type": "String"
-					},
-					{
-						"name": "FINANCE_SUBGROUP_DSC",
-						"type": "String"
-					},
-					{
-						"name": "SIZE_RANGE_CD",
-						"type": "String"
-					},
-					{
-						"name": "SIZE_RANGE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "NATURE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "STATUS_DSC",
-						"type": "String"
-					},
-					{
-						"name": "ORIGIN_SUBREGION_DSC",
-						"type": "String"
-					},
-					{
-						"name": "CONSOLIDATED_CD",
-						"type": "String"
-					},
-					{
-						"name": "HOLD_COMPANY_DSC",
-						"type": "String"
-					},
-					{
-						"name": "SUPPLIER_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UNIT_TYPE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UOM_SIZE_DSC",
-						"type": "String"
-					},
-					{
-						"name": "UNIT_SIZE_NO",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/blb_ssfdemo_tstcontnrpotu')]"
-			]
 		}
 	]
 }
