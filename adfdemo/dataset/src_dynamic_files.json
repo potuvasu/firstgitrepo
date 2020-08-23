@@ -1,17 +1,14 @@
 {
-	"name": "tgt_dynamic_files",
+	"name": "src_dynamic_files",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "blb_ssfdemo_tstcontnrpotu",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"tgt_fl_nm": {
+			"fl_nm": {
 				"type": "string"
 			}
-		},
-		"folder": {
-			"name": "tgt"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
@@ -19,10 +16,10 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@dataset().tgt_fl_nm",
+					"value": "@dataset().fl_nm",
 					"type": "Expression"
 				},
-				"container": "tgtcontnrpotu"
+				"container": "tstcontnrpotu"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
