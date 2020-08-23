@@ -1,0 +1,32 @@
+{
+	"name": "src_dynamic",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "blb_ssfdemo_tstcontnrpotu",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"src_fl_nm": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().src_fl_nm",
+					"type": "Expression"
+				},
+				"container": "tstcontnrpotu"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
