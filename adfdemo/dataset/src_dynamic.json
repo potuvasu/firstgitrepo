@@ -15,10 +15,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": {
-					"value": "@dataset().src_fl_nm",
-					"type": "Expression"
-				},
 				"container": "tstcontnrpotu"
 			},
 			"columnDelimiter": ",",
