@@ -38,20 +38,11 @@
 					"referenceName": "blb_ssfdemo_tstcontnrpotu",
 					"type": "LinkedServiceReference"
 				},
-				"parameters": {
-					"src_fl_nm": {
-						"type": "string"
-					}
-				},
 				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": {
-							"value": "@dataset().src_fl_nm",
-							"type": "Expression"
-						},
 						"container": "tstcontnrpotu"
 					},
 					"columnDelimiter": ",",
@@ -1039,6 +1030,49 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/src_item')]",
 				"[concat(variables('factoryId'), '/datasets/tgt_item')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Pip_Move_File_Dynamic')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Get Metadata1",
+						"type": "GetMetadata",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"dataset": {
+								"referenceName": "src_dynamic",
+								"type": "DatasetReference",
+								"parameters": {}
+							},
+							"fieldList": [
+								"childItems"
+							],
+							"storeSettings": {
+								"type": "AzureBlobStorageReadSettings",
+								"recursive": true
+							},
+							"formatSettings": {
+								"type": "DelimitedTextReadSettings"
+							}
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/src_dynamic')]"
 			]
 		},
 		{
